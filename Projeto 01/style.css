@@ -1,0 +1,58 @@
+body {
+  font-family: 'Open Sans', sans-serif;
+
+  text-align: center;
+  margin: 0;
+}
+
+#hero {
+  width: 592px;
+  margin: 0 auto 72px;
+}
+
+#hero img {
+  margin-bottom: 72px;
+}
+h1 {
+  font-family: 'Inter', sans-serif;
+  font-size: 49px;
+  line-height: 56px;
+  font-weight: normal;
+
+  margin-bottom: 32px;
+
+}
+/* Entretanto, precisamos expecificar uma palavra em Bold no h1. Para isso escrevemos a instruçao abaixo. com h1 span,
+ puxamos apenas o span dentro do h1. */
+h1 span {
+  font-weight: bold;
+}
+
+span, a {
+  color: #FF9900;
+}
+
+p, #footer {
+  color: #7D7987;
+  font-size: 14px;
+  line-height: 28px;
+}
+
+#footer a + a { /* esse seletor de a + a é um seletor que vai pegar um a, onde tem outro a antes dele.^
+   Seguindo a regra de cascata, um a, depois de outro a, depois de footer.  Esse seletor funciona para espaçamento de mais de 2 elementos */
+  margin-left: 28px;
+}
+
+.line {
+  width: 568px;
+  height: 0px;
+  margin: 0 auto 8px;
+
+  border: 1px solid #ECEFF2;
+}
+
+#balls {
+  position: fixed /* o fixed poderá ser usado para manter o elemento fixo, mesmo com a rolagem da tela/ecra */;
+  bottom: 0px;
+  right: 0px;
+}
