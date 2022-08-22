@@ -44,7 +44,7 @@ ul li a:hover {
   opacity: 1;
 }
 
-h1 ul{
+h1, ul{
   font-family: 'Mulish', sans-serif;
 }
 
