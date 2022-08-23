@@ -13,8 +13,10 @@ html {
     flex-direction: column;
   }
 
-  header .menu, main #hero .textbox {
+  header .menu, main #hero .textbox, footer p{
     text-align: center;
+    margin-left: 0;
+    padding-left: 0;
   }
 
   header #Logo, main #hero #img1 {
@@ -23,6 +25,10 @@ html {
 
   #padlock {
     opacity: 0.3;
+  }
+
+  footer .line {
+    width: 100%;
   }
 }
 
