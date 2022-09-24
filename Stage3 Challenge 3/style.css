@@ -1,0 +1,139 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+:root {
+  --ff-heading: 'Staatliches', cursive;
+  --ff-text: 'Palanquin', sans-serif;
+
+  --hue: 290;
+  --fc-primary: hsl(0, 0%, 100%);
+  --fc-secondary: hsl(var(--hue), 84%, 12%);
+  --fc-secondarydark: hsl(var(--hue), 17%, 28%);
+
+  --bg-a: hsl(var(--hue), 100%, 97%);
+  --bg-b: hsl(var(--hue), 17%, 62%);
+  --bg-c: hsl(var(--hue), 18%, 79%);
+  --bg-d: hsl(var(--hue), 91%, 96%);
+
+  font-size: 62.5%;
+}
+
+
+body {
+  margin: auto;
+  background: #E5E5E5;
+}
+
+.page {
+  max-width: 38.4rem;
+
+  display: grid;
+  margin: 0 auto;
+}
+
+header {
+  height: 30rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  background: var(--bg-b);
+}
+
+.headertitle {
+  background: var(--bg-c);
+}
+
+.logo {
+  height: 16.7rem;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+h1 {
+  width: 100%;
+  height: 5rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-family: var(--ff-heading);
+  font-size: 4rem;
+  line-height: 3.4rem;
+
+  letter-spacing: 0.05em;
+
+  color: var(--fc-primary);
+  text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+}
+
+main {
+  display: grid;
+  gap: 3.2rem;
+  padding: 1.4rem 3.2rem 5rem;
+
+  background: var(--bg-a);
+}
+
+p {
+  display: block;
+  text-align: center;
+  align-content: center;
+  font-family: var(--ff-text);
+  color: var(--fc-secondary);
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: 1.9rem;
+
+  max-height: 7.5rem;
+  max-width: 30.5rem;
+
+  margin-bottom: 3.1rem;
+}
+
+.card {
+  display: inline-block;
+  position: relative;
+}
+
+.card a {
+  display: inline-block;
+  width: 100%;
+}
+
+.card img, .card svg{
+  object-fit: cover;
+  width: 100%;
+  height: auto;
+}
+
+.card .text-box {
+  position: absolute;
+  top: 1.6rem;
+  right: 1.6rem;
+
+  background-color: var(--bg-d);
+
+  width: 11.2rem;
+  height: 3.5rem;
+  border-radius: 2rem;
+
+  text-align: center;
+}
+
+.card h3 {
+  margin-top: 1px;
+  width: 100%;
+  height: 3.4rem;
+  font-family: var(--ff-heading);
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: 3.4rem;
+
+  letter-spacing: 0.05em;
+  color: var(--fc-secondarydark);
+}

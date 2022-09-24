@@ -1,0 +1,303 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+h1, .orangebox, legend, button, .button-background input {
+  font-family: 'Staatliches', cursive;
+}
+
+.header-wrapper h1 {
+  font-size: 36px;
+  line-height: 45px;
+
+  margin-top: 105px;
+}
+
+.header-wrapper p {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+header, .legend1{
+  color: #FFFFFF;  
+}
+
+#img-ratings {
+  margin-top: 19.5px;
+}
+
+body {
+  background: #BFD7E4;
+}
+
+
+body, input, textarea, select {
+  font-family: 'Poppins', sans-serif;
+  color: #4E4958;
+}
+
+body::before {
+  content: "";
+  width: 100%;
+  height: 465px;
+  
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  
+  background: #293241;
+}
+
+.page {
+  width: 750px;
+  margin: auto;
+  
+}
+
+header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.orangebox {
+  width: 100%;
+  height: 133px;
+  background-color: #F67669;
+  text-align: center;
+
+  margin-top: 32px;
+
+  padding: 50px 275px;
+  
+  border-radius: 20px 20px 0 0;
+}
+
+.orangebox legend {
+  font-size: 24px;
+  line-height: 34px;
+}
+
+form {
+  height: 1075px;
+  padding: 30px 64px 64px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+
+  margin-bottom: 30px;
+  border-radius: 0px 0px 20px 20px;
+
+  background: #FFFFFF;
+}
+
+fieldset {
+  border: none;
+}
+
+fieldset legend {
+  font-size: 24px;
+  line-height: 34px;
+
+  text-align: center; 
+
+  margin: 4px 0 2px;
+
+  padding: 7px;
+
+  width: 100%;
+  border-bottom: 1px solid #d5d5df;
+  color: #253B51;
+}
+
+.fieldset-wrapper {
+  display: flex;
+  flex-direction: column;
+  
+  gap: 32px;
+}
+
+.form-wrapper1, #yourname, #yoursurname, .form-wrapper3, .form-wrapper4 {
+  font-size: 14px;
+  line-height: 24px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 7.5px;
+}
+
+.form-wrapper2 {
+  font-size: 14px;
+  line-height: 24px;
+
+  display: flex;
+  flex-direction: row;
+}
+
+
+input, date, select, textarea,.form-wrapper1 time, .form-wrapper3 #time1, .form-wrapper4 #time2 {
+  border: 1px solid #d5d5df;
+  border-radius: 8px;
+  
+  padding: 0 10px;
+}
+
+.form-wrapper3 input, .form-wrapper4 input {
+  height: 55px;
+  width: 140px;
+}
+
+.fullname input, select, #date {
+  height: 55px;
+  width: 300px;
+}
+
+#email{
+  height: 55px;
+  width: 622px;
+}
+
+textarea {
+  height: 166px;
+  width: 622px;
+
+  padding: 7px 10px;
+}
+
+span {
+  font-size: 12px;
+  line-height: 20px;
+
+  color: #C1BCCC;
+}
+
+span:hover {
+  color: #777480;
+}
+
+.fullname {
+  display: flex;
+  gap: 22px;
+}
+
+#yourname, #yoursurname {
+  display: flex;
+  flex-direction: column;
+}
+
+
+.checkbox-wrapper {
+  display: flex;
+  gap: 4px;
+}
+
+.checkbox-wrapper input {
+  height: 23.8px;
+  width: 24px;
+  background: #FAFAFC;
+  border: 1px solid #bfbfc7;
+  border-radius: 8px;
+}
+
+.form-wrapper3 {
+  margin-left: 32px;
+}
+
+.form-wrapper4 {
+  margin-left: 10px;
+}
+
+.button-background {
+  padding: 15px 40px;
+  width: 622px;
+  height: 51px;
+
+  margin-top: 30px;
+  
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 8px;
+
+  background: #F67669;
+}
+
+.button-background input {
+  font-size: 20px;
+  line-height: 26px;
+  font-style: normal;
+  font-weight: 400;
+  text-decoration: none;
+
+  border: none;
+
+  background: #F67669;
+  color: #FFFFFF;
+}
+
+.button-background input:hover {
+  color: #adadb3;
+}
+
+
+@media (max-width: 760px) {
+  .page {
+    width: 100%;
+  }
+
+  body{
+    background: #293241;
+  }
+  form {
+    width: 99%;
+    height: auto;
+    padding: 5% 3%;
+    align-items: center;
+    margin: auto;  
+  }
+
+  .header-wrapper h1{
+    margin-top: 5%;
+  }
+  .header-wrapper{
+    margin: 0 3%;
+  }
+  .orangebox {
+    width: 99%;
+    padding: 12% 20%;
+    align-items: center;
+    margin: auto;
+  }
+
+  .button-background {
+    width: 88%;
+  }
+  #email, textarea{
+    width: 100%;
+  }
+  .form-wrapper3 input, .form-wrapper4 input {
+    width: 100%;
+  }
+  
+  .fullname input, select, #date, textarea {
+    width: 100%;
+  }
+
+  input, date, select, textarea,.form-wrapper1 time, .form-wrapper3 #time1, .form-wrapper4 #time2, .form-wrapper2 {
+    padding: 0 3%;
+  }
+  .form-wrapper2 {
+    flex-direction: column;
+    align-items: auto;
+  }
+
+  .form-wrapper3, .form-wrapper4 {
+    margin-left: 0;
+    margin-top: 3%;
+  }
+}
