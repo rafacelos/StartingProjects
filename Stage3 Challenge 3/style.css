@@ -6,8 +6,24 @@
 
 
 :root {
+  font-size: 62.5%;
+
   --ff-heading: 'Staatliches', cursive;
-  --ff-text: 'Palanquin', sans-serif;
+  --ff-text-mobile: 'Palanquin', sans-serif;
+  --ff-text-web: 'Roboto', sans-serif;
+  --ff-footer: 'Open Sans', sans-serif;
+
+  --fs-heading: 4rem;
+  --fs-heading-sm: clamp(3.8rem, 3.5rem + 0.5vw, 4.8rem);
+  --fs-text: 2rem;
+  --fs-footer: 1.4rem;
+  --fs-text-sm: clamp(1.2rem, 0.5rem + 1vw, 2.4rem);
+
+  --lh-heading: 3.4rem;
+  --lh-heading-sm: clamp(3rem, 3rem + 0.7vh, 3.4rem);
+  --lh-text: 1.9rem;
+  --lh-footer: 2.8rem;
+  --ls-text-sm: clamp(1rem, 0.8rem + 2vh, 2rem);
 
   --hue: 290;
   --fc-primary: hsl(0, 0%, 100%);
@@ -15,106 +31,129 @@
   --fc-secondarydark: hsl(var(--hue), 17%, 28%);
 
   --bg-a: hsl(var(--hue), 100%, 97%);
-  --bg-b: hsl(var(--hue), 17%, 62%);
+  --bg-b: hsl(var(--hue), 20%, 50%);
   --bg-c: hsl(var(--hue), 18%, 79%);
   --bg-d: hsl(var(--hue), 91%, 96%);
-
-  font-size: 62.5%;
 }
 
 
 body {
-  margin: auto;
-  background: #E5E5E5;
+  background-color: #E5E5E5;
 }
 
 .page {
-  max-width: 38.4rem;
-
+  max-width: clamp(38.4rem, 40rem + 60vw, 128rem);
+  background-color: var(--bg-a);
   display: grid;
   margin: 0 auto;
 }
 
+img {
+  width: 100%;
+  height: auto;
+}
+
 header {
-  height: 30rem;
+  padding: 3.2rem 0 2.9rem;
+  text-align: center;
+  background: var(--bg-b);
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
-  background: var(--bg-b);
+  justify-content: flex-start;
+  gap: 3.2rem;
 }
 
 .headertitle {
   background: var(--bg-c);
+  height: 5rem;
+  display: flex;
+  justify-content: center;
 }
 
 .logo {
+  transition: ease-in-out;
+
+  animation-name: spin;
+  animation-duration: 4.5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-play-state: paused;
+}
+
+.logo svg {
+  width: 21.4rem;
   height: 16.7rem;
-  width: fit-content;
-  margin: 0 auto;
+  height: auto;
+  margin: 0 auto; 
+}
+
+.logo:hover {
+  animation-play-state: running;
 }
 
 h1 {
-  width: 100%;
-  height: 5rem;
+  margin: auto;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
+  font-weight: 400;
   font-family: var(--ff-heading);
-  font-size: 4rem;
-  line-height: 3.4rem;
+  font-size: var(--fs-heading);
+  line-height: var(--lh-heading);
 
   letter-spacing: 0.05em;
 
   color: var(--fc-primary);
   text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+
+  animation: left-right 1.3s;
 }
 
 main {
   display: grid;
   gap: 3.2rem;
+  text-align: center;
+  background-color: var(--bg-a);
   padding: 1.4rem 3.2rem 5rem;
-
-  background: var(--bg-a);
 }
 
 p {
-  display: block;
   text-align: center;
-  align-content: center;
-  font-family: var(--ff-text);
+  font-family: var(--ff-text-mobile);
   color: var(--fc-secondary);
   font-weight: 400;
-  font-size: 2rem;
-  line-height: 1.9rem;
+  font-size: var(--fs-text);
+  line-height: var(--lh-text);
+  max-width: 32rem;
 
-  max-height: 7.5rem;
-  max-width: 30.5rem;
-
-  margin-bottom: 3.1rem;
+  margin: 0.5rem auto 3.1rem;
+  
+  animation: ghost 2.5s backwards;
+  animation-timing-function: ease-out;
 }
 
 .card {
-  display: inline-block;
   position: relative;
 }
 
-.card a {
-  display: inline-block;
-  width: 100%;
-}
-
-.card img, .card svg{
+.card img {
   object-fit: cover;
-  width: 100%;
-  height: auto;
+
+  border-radius: 20px;
+  
+  transition: 0.5s ease-in-out;
+  animation: right-left 1.3s backwards;
 }
 
-.card .text-box {
+.card img:hover {
+  transform: scale(1.08);
+}
+
+.card h3 {
   position: absolute;
   top: 1.6rem;
   right: 1.6rem;
+
+  text-align: center;
+  padding-top: 1px;
 
   background-color: var(--bg-d);
 
@@ -122,18 +161,253 @@ p {
   height: 3.5rem;
   border-radius: 2rem;
 
-  text-align: center;
-}
-
-.card h3 {
-  margin-top: 1px;
-  width: 100%;
-  height: 3.4rem;
   font-family: var(--ff-heading);
   font-weight: 400;
   font-size: 2rem;
-  line-height: 3.4rem;
+  line-height: var(--lh-heading);
 
   letter-spacing: 0.05em;
   color: var(--fc-secondarydark);
+
+  animation: ghost 2.5s backwards;
+  animation-timing-function: ease-out;
+}
+
+footer {
+  display: none;
+}
+
+footer p, footer a {
+  font-family: var(--ff-footer);
+  color: var(--fc-secondarydark);
+  font-size: var(--fs-footer);
+  line-height: var(--lh-footer);
+
+  text-align: center;
+}
+
+footer a {
+  text-decoration: none;
+  font-weight: 700;
+  animation: ghost 2.5s backwards;
+  animation-timing-function: ease-out;
+}
+
+a:link, a:visited, a:hover, a:active {
+  text-decoration: none;
+  color: var(--fc-secondarydark);
+}
+
+.header-p {
+  display: none;
+  color: var(--fc-primary);
+}
+
+@keyframes left-right {
+
+  0% {
+    opacity: 0;
+    transform: translateX(-4rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes right-left {
+
+  0% {
+    opacity: 0;
+    transform: translateX(2.5rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes ghost {
+  
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  75% {
+    opacity: 0.4;
+  }
+
+  100% {
+    opacity: 1;
+  }
+
+}
+
+@keyframes spin {
+
+  0% {
+    scale: 1;
+    transform: rotate(0deg);
+  }
+
+  50% {
+    scale: 0.8;
+  }
+
+  100% {
+    scale: 1;
+    transform: rotate(360deg);
+  }
+}
+
+@media (min-width: 600px) {
+  main p, .card h3 {
+    display: none;
+  }
+  .page {
+    grid-template-areas: 
+    "header main main main"
+    "header footer footer footer";
+
+    max-width: 100%;
+    height: 100vh;
+    max-height: 72rem;
+  }
+
+  header {
+    grid-area: header;
+    padding-bottom: 0;
+  }
+
+  .header-p {
+    margin: 0 clamp(1rem, 2rem + 2vw, 4.8rem) 3.2rem;
+    display: inline-block;
+    font-family: var(--ff-text-web);
+    font-style: normal;
+    font-weight: 400;
+
+    font-size: var(--fs-text-sm);
+    line-height: var(--ls-text-sm);
+    max-width: 27.5rem;
+    max-height: 26.2rem;
+  }
+
+  main .A {
+    grid-area: A;
+  }
+  main .B {
+    grid-area: B;
+  }
+  main .C {
+    grid-area: C;
+  }
+  main .D {
+    grid-area: D;
+  }
+  main .E {
+    grid-area: E;
+    display: none;
+  }
+  main .F {
+    grid-area: F;
+    display: none;
+  }
+
+  img {
+    height: 100%;
+  }
+
+  main {
+    grid-area: main;
+    grid-template-areas: 
+    "A B" 
+    "D B" 
+    "D C";
+
+    gap: 3.2rem;
+    padding: 3.2rem;
+  }
+
+  footer {   
+    display: flex;
+    justify-content: center;
+    height: auto;
+    background-color: var(--bg-a);
+
+    grid-area: footer;
+  }
+
+  footer p {
+    margin: 0;
+    font-weight: 400;
+    display: inline-block;
+  }
+}
+
+@media (min-width: 1000px) {
+  main .E, main .F {
+    display: flex;
+  }
+
+  header .logo svg {
+    width: 21.447rem;
+  }
+
+  header {
+    padding: 3.2rem 0;
+    max-width: 37.7rem;
+    height: auto;
+  }
+
+  .page {
+    grid-template-areas: 
+    "header main"
+    "header footer";
+
+    max-width: 128rem;
+    height: 100vh;
+    max-height: 72rem;
+  }
+
+  .headertitle {
+    height: 7rem;
+  }
+
+  header h1{
+    font-size: var(--fs-heading-sm);
+    line-height: var(--lh-heading-sm);
+    letter-spacing: 0;
+  }
+
+  .header-p {
+    margin: 0.5rem clamp(1rem, 2rem + 2vw, 4.8rem);
+    display: inline-block;
+    font-family: var(--ff-text-web);
+    font-style: normal;
+    font-weight: 400;
+
+    font-size: var(--fs-text-sm);
+    line-height: var(--ls-text-sm);
+    max-width: 27.5rem;
+    max-height: 26.2rem;
+  }
+
+  main {
+    grid-template-areas:
+     "A B F"
+     "D B E"
+     "D C E";
+    
+    padding: 6.4rem 8.1rem 5rem 9.8rem;
+  }
+
+  footer {
+    padding-bottom: 4.6rem;
+  }
 }
